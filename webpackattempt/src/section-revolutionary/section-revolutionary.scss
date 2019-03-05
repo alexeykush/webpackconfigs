@@ -1,0 +1,116 @@
+@mixin flex{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin grid{
+	display:grid;
+	align-items:center;
+	justify-items:center;	
+}
+.revolutionary{
+	height: 420px;
+	margin-top: 100px;
+	.section-title{
+		text-align: center;
+		&__heading{
+			color:  #635c73;
+			font-size: 1.624rem;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+		&__text{
+			font-family: 'Lato',sans-serif;
+			color:  #323232;
+			font-size: 0.875rem;
+		}
+	}
+	.github-icons{
+		display:flex;
+		justify-content:space-around;
+		align-items:center;
+		flex-direction:row;
+		flex-wrap:wrap;
+		width: 310px;
+		height: 100px;
+		margin:0 auto;
+		&-item{
+			width: 120px;
+			height: 25px;
+			border-radius: 0.25em;
+			border: 1px solid rgba(27,31,35,0.2);
+			border-left: 1.5px solid rgba(27,31,35,0.2);
+			cursor: pointer;
+			@include grid;
+			grid-template-columns:70px 50px;
+			&__icon{
+				grid-column-start:1;
+				width: 100%;
+				height: 100%;
+				font-size: 13px;
+				font-weight: 700;
+				border-right: 1px solid rgba(27,31,35,0.2);
+				background-color: #eff3f6;
+				background-image: linear-gradient(#fafbfc, #eff3f6 90%);
+				color:#24292e;
+				@include grid;
+				grid-template-columns:27px 38px 26px;
+				&:hover{
+					background-color: #e6ebf1;
+				    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+				    background-position: -0.5em;
+				}
+			}
+			&__counter{
+				grid-column-start:2;
+				color:#24292e;
+				font-weight: 700;
+				font-size: 14px;
+				&:hover{
+					color: #0366d6;
+				}
+			}
+		}
+	}
+}
+@media only screen and (min-width: 401px){
+	.revolutionary{
+		.section-title{
+			&__heading{
+				font-size: 2.625rem;
+			}
+			&__text{
+				font-size: 1rem;
+			}
+		}
+		.github-icons{
+			width: 385px;
+		}		
+	}
+
+}
+
+@media only screen and (min-width: 481px){
+	.revolutionary{
+		.section-title{
+			&__text{
+				font-size: 1.313rem;
+			}
+		}
+		.github-icons{
+			width: 400px;
+		}		
+	}
+}
+
+@media only screen and (min-width: 973px){
+	.revolutionary{
+		.section-title{
+			&__heading{
+				font-size: 3.376rem;
+			}
+		}		
+	}
+}
+

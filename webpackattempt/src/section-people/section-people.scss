@@ -1,0 +1,162 @@
+@mixin flex{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin grid{
+	display:grid;
+	align-items:center;
+	justify-items:center;	
+}
+
+.people{
+	height: 1425px;
+	width: 100%;
+	padding-top: 50px;
+	background:#4a3b4e;
+	position: relative;
+	overflow: hidden;
+	&::before{
+		content:"";
+		display:block;
+		height: 822px;
+		position: absolute;
+		background: url('../img/people-background-img.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		top: -29px;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+	}
+	.section-title--people{
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		color:#fff;
+		font-size: 2.25rem;
+		font-weight: 700;
+	}
+	.people--container{
+		position: relative;
+		z-index: 1;
+		height: initial;
+		.clients-list{
+			width: 300px;
+    		height: 1200px;
+			@include flex;
+			flex-wrap:wrap;
+			justify-content: space-between;
+			align-content:space-between;
+			margin:0 auto;
+			.clients-item{
+				width: 300px;
+			    height: 130px;
+    			margin-bottom: 60px;
+				@include grid;
+			    grid-template-rows: 1fr 10px 1fr;
+				&__logo{
+					text-align: center;
+					font:{
+						weight:700;
+						size:1.5rem;
+					}
+					color:#fff;
+					@include flex;
+					span{
+						margin-left: 20px;
+					}
+				}
+				&__text{
+					text-align: center;
+					font:{
+						family:'Lato',sans-serif;
+						size:1rem;
+						weight:700;
+						style:italic;
+					}
+					color:  #ffffff;
+					line-height: 1.5;
+					grid-row-start: 3;
+				}
+			}
+		}
+
+		.clients-desc{
+			font-family: Lato;
+			color:  rgba(162, 145, 165, 0.8);
+			font-size: 0.875rem;
+			text-align: center;
+			&::after{
+				content:'';
+				display: block;
+				width: 95%;
+				height: 2px;
+				position: relative;
+				top: -10px;
+				margin:0 auto;
+				background:#645766;
+			}
+			.clients-desc__text{
+				display: none;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 401px){
+	.people{
+		.section-title--people{
+			font-size: 2.625rem;
+		}
+	}
+}
+
+@media only screen and (min-width: 481px){
+	.people{
+		height: 1015px;
+		.people--container{
+			.clients-list{
+				width: 100%;
+				height: 700px;
+				.clients-item{
+					width: 49%;
+					height: 180px;
+					grid-template-rows: 120px 0px 90px;
+				}
+			}
+			.clients-desc{
+				position: relative;
+				top: 35px;
+				&::after{
+					top: 15px;
+				}
+				.clients-desc__text{
+					display: inline;
+				}
+			}	
+		}
+		
+	}
+}
+
+
+@media only screen and (min-width: 993px){
+	.people{
+		height: 745px;
+		.people--container{
+			.clients-list{
+				height: 400px;
+				.clients-item{
+					width: 30%;
+				}
+			}
+			.clients-desc{
+				top:80px;
+			}
+		}
+	}
+}

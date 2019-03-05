@@ -1,0 +1,41 @@
+$small: 401px;
+$small_s: 481px;
+$medium: 993px;
+$button-s: 280px;
+$button-l: 240px;
+$button-height: 50px;
+
+@mixin sm {
+  @media (min-width: #{$small}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$small_s}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$medium}) {
+    @content;
+  }
+}
+
+@mixin social-btn-s {
+  display: flex;
+  justify-content: space-between;
+  width: $button-s;
+  height: $button-height;
+  border-radius: 4px;
+  font-size: 1.313rem;
+  color: white;
+  .fab {
+    position: relative;
+    top: 2px;
+    left: 20px;
+  }
+}
+
+

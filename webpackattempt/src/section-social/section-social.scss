@@ -1,0 +1,237 @@
+@import "../mixins/mixins";
+
+.social {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  .social__container {
+    min-height: 500px;
+    width: calc(100% - 20px);
+    @include sm {
+      width: calc(100% - 50px);
+    }
+
+    .carousel {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include md {
+        border-bottom: 1px solid #f4f4f4;
+      }
+      @include lg {
+        border-bottom: none;
+      }
+      .arrow {
+        color: #848e97;
+        position: relative;
+        top: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        @include sm {
+          top: 45px;
+        }
+        @include lg {
+          top: 0;
+        }
+      }
+      .carousel-item {
+        width: 100%;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        @include sm {
+          height: 300px;
+        }
+        @include lg {
+          height: 350px;
+        }
+        .item-heading {
+          margin-top: 20px;
+          width: 100%;
+          height: 155px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          text-align: center;
+          flex-direction: column;
+          @include sm {
+            flex-direction: row;
+            justify-content: center;
+          }
+          .carousel-item__img {
+            overflow: hidden;
+            border-radius: 50%;
+            height: 85px;
+            width: 85px;
+            @include sm {
+            }
+          }
+          .carousel-item__img-1 {
+            background: url("../img/wp1.jpg");
+            background-size: cover;
+          }
+          .carousel-item__img-2 {
+            background: url("../img/wp2.jpg");
+            background-size: cover;
+          }
+          .carousel-item__img-3 {
+            background: url("../img/wp3.jpg");
+            background-size: cover;
+          }
+          .carousel-item__img-4 {
+            background: url("../img/wp4.jpg");
+            background-size: cover;
+          }
+          .carousel-item__img-5 {
+            background: url("../img/wp5.jpg");
+            background-size: cover;
+          }
+          .item-heading-name {
+            display: flex;
+            flex-direction: column;
+            @include sm {
+              padding-left: 20px;
+              text-align: left;
+            }
+            .carousel-item__name {
+
+              color: #474747;
+              font: {
+                size: 1.5rem;
+                weight: 700;
+              }
+              @include sm {
+
+              }
+            }
+            .carousel-item__nick {
+              color: #8d81ac;
+              font-size: 1rem;
+              @include sm {
+
+              }
+            }
+          }
+        }
+        .carousel-item__text {
+          margin-bottom: 40px;
+          width: 75%;
+          text-align: center;
+          font: {
+            family: Lato, sans-serif;
+            size: 1.063rem;
+          }
+          @include sm {
+            margin-top: 0;
+          }
+        }
+        .carousel-item__text-nick {
+          color: #8d81ac;
+        }
+        .carousel-item__visit {
+          padding-bottom: 20px;
+          @include lg {
+            display: block;
+            text-align: center;
+            width: 75%;
+            height: 100px;
+            border-bottom: 1px solid #f4f4f4;
+            padding-bottom: initial;
+          }
+        }
+      }
+    }
+    .social-buttons {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: 50px;
+      @include md {
+        margin: auto;
+        padding-top: 50px;
+        max-width: 520px;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      @include lg {
+        max-width: 900px;
+        flex-wrap: nowrap;
+      }
+      .social-btn {
+        margin-bottom: 30px;
+        text-align: center;
+        .social-btn__github {
+          @include social-btn-s;
+          background-color: #f3f3f3;
+          color: black;
+          transition: 0.6s ease;
+          @include md {
+            width: 210px;
+          }
+          @include lg {
+            width: 240px;
+          }
+          &:hover {
+            background-color: #2b414d;
+            color: white;
+          }
+        }
+        .social-btn__twitter {
+          transition: 0.6s ease;
+          @include social-btn-s;
+          background-color: #26a6d1;
+          @include md {
+            width: 210px;
+          }
+          @include lg {
+            width: 240px;
+          }
+          &:hover {
+            background-color: white;
+            border: 1px solid #26a6d1;
+            color: #26a6d1;
+          }
+        }
+        .social-btn__facebook {
+          transition: 0.6s ease;
+          @include social-btn-s;
+          background-color: #3b5998;
+          @include md {
+            width: 210px;
+          }
+          @include lg {
+            width: 240px;
+          }
+          &:hover {
+            background-color: white;
+            border: 1px solid #3b5998;
+            color: #3b5998;
+          }
+        }
+        .social-btn__text {
+          margin-top: 20px;
+          color: #848e97;
+          font-size: 0.875rem;
+        }
+      }
+      .social-btn-center {
+        @include md {
+          margin: 0 auto;
+        }
+        @include lg {
+          margin: -30px 0 0 0;
+        }
+      }
+    }
+  }
+}
